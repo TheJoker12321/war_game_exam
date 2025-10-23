@@ -8,7 +8,11 @@ def create_card(rank:str,suite:str) -> dict:
     return card_dictionary
 
 def compare_cards(p1_card:dict, p2_card:dict) -> str:
-    pass
+    if p1_card["value"] > p2_card["value"]:
+        return "p1"
+    elif p2_card["value"] > p1_card["value"]:
+        return "p2"
+    return "WAR"
 
 def create_deck() -> list[dict]:
     pass
@@ -16,4 +20,3 @@ def create_deck() -> list[dict]:
 def shuffle(deck:list[dict]) -> list[dict]:
     pass
 
-print(create_card("2", "u"))
