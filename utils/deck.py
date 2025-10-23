@@ -15,8 +15,19 @@ def compare_cards(p1_card:dict, p2_card:dict) -> str:
     return "WAR"
 
 def create_deck() -> list[dict]:
-    pass
+    list_card_deck = []
+    type__suites = ["H", "C", "D","S"]
+    type_special_cards = ["J", "Q", "K", "A"]
+    for i in range(2, 11):
+        for j in type__suites:
+            list_card_deck.append(create_card(str(i),j))
+    for i in type_special_cards:
+        for j in type__suites:
+            list_card_deck.append(create_card(i, j))
+    return list_card_deck
+
 
 def shuffle(deck:list[dict]) -> list[dict]:
     pass
 
+create_deck()
