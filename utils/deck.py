@@ -1,3 +1,4 @@
+import random
 def create_card(rank:str,suite:str) -> dict:
     cards_values = {"2": 2, "3": 3,"4": 4, "5": 5, "6": 6, "7": 7,
                     "8": 8, "9": 9, "10": 10, "J": 11, "Q": 12, "K": 13, "A": 14}
@@ -28,6 +29,15 @@ def create_deck() -> list[dict]:
 
 
 def shuffle(deck:list[dict]) -> list[dict]:
-    pass
+    new_shuffle_deck = deck[:]
+    print(len(new_shuffle_deck))
+    for i in range(1000):
+        index_1 = random.randrange(0, 52)
+        index_2 = random.randrange(0, 52)
+        if index_1 == index_2:
+            while index_1 == index_2:
+                index_1 = random.randrange(0, 52)
+                index_2 = random.randrange(0, 52)
+        new_shuffle_deck[index_1], new_shuffle_deck[index_2] = new_shuffle_deck[index_2],new_shuffle_deck[index_1]
+    return new_shuffle_deck
 
-create_deck()
