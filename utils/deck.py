@@ -30,7 +30,6 @@ def create_deck() -> list[dict]:
 
 def shuffle(deck:list[dict]) -> list[dict]:
     new_shuffle_deck = deck[:]
-    print(len(new_shuffle_deck))
     for i in range(1000):
         index_1 = random.randrange(0, 52)
         index_2 = random.randrange(0, 52)
