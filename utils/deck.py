@@ -1,6 +1,9 @@
 def create_card(rank:str,suite:str) -> dict:
     cards_values = {"2": 2, "3": 3,"4": 4, "5": 5, "6": 6, "7": 7,
                     "8": 8, "9": 9, "10": 10, "J": 11, "Q": 12, "K": 13, "A": 14}
+    type_suites = ["H", "C", "D","S"]
+    if suite not in type_suites:
+        raise ValueError
     card_dictionary = {"rank": rank, "suite": suite, "value":cards_values[rank]}
     return card_dictionary
 
@@ -12,3 +15,5 @@ def create_deck() -> list[dict]:
 
 def shuffle(deck:list[dict]) -> list[dict]:
     pass
+
+print(create_card("2", "u"))
